@@ -253,7 +253,7 @@ for image_name in tq.tqdm(input_files):
     # ------ (Grouping and Legend mapping on GT keypoints) ------
     Scores = np.zeros((len(legend_bboxes), len(all_kps))) # Legends in Rows, Lines in Cols
     draw = ImageDraw.Draw(image_cls)
-    fnt = ImageFont.truetype("Pillow/Tests/fonts/FreeMono.ttf", 20)
+    # fnt = ImageFont.truetype("Pillow/Tests/fonts/FreeMono.ttf", 20)
     legend_bboxes = np.array(legend_bboxes)
     legend_bboxes[:, 0] = legend_bboxes[:, 0] - legend_bboxes[:, 2]/2
     legend_bboxes[:, 1] = legend_bboxes[:, 1] - legend_bboxes[:, 3]/2
@@ -317,7 +317,7 @@ for image_name in tq.tqdm(input_files):
         if len(line) == 0 :
             continue
         legend_bbox = legend_bboxes[line_idx_]
-        draw.text((line[-1][0], line[-1][1]), str(len(line)), font = fnt, fill = (255, 0, 0))
+        draw.text((line[-1][0], line[-1][1]), str(len(line)),  fill = (255, 0, 0)) # font = fnt,
         xy_list = [(line[-1][0], line[-1][1]), (legend_bbox[0], legend_bbox[1])]
         draw.line(xy_list, fill=(255, 0, 0), width=1)
     save_path = args.output_path + 'mapped_'+ image_name

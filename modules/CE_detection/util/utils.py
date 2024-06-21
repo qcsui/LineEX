@@ -27,7 +27,7 @@ colors = [(0, 122 , 122), (122, 0, 122), (0, 122 , 122), (255, 0 , 255), (0, 255
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 fontScale = 1
-reader = easyocr.Reader(['en'], gpu = 'cuda:0') # only english for now
+reader = easyocr.Reader(['en'], gpu = 'cpu') # only english for now
 
 def normalize(image):
     mean = [0.485, 0.456, 0.406]
