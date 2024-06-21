@@ -47,3 +47,5 @@ modules/CE_detection/ckpts/*.t7
 sample_output/*.png
 sample_output/*.json
 sample_input/*.png
+weights.zip
+modules/CE_detection/util/__pycache__/misc.cpython-38.pyc

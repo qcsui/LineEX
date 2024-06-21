@@ -147,8 +147,8 @@ parser.add_argument('--show_keypoints', default=True, type=bool)
 parser.add_argument('--input_path',default="sample_input/")#"/home/md.hassan/charts/data/data/synth_lines/temp/images"
 parser.add_argument('--output_path',default="sample_output/")
 # parser.add_argument('--data_path',default='/home/md.hassan/charts/s_CornerNet/synth_data/data/line/figqa/val/',help = "path to data (Ours, Adobe)")
-parser.add_argument('--use_gpu',default=False)
-parser.add_argument('--cuda_id',default=1)
+parser.add_argument('--use_gpu',default=True)
+parser.add_argument('--cuda_id',default=0)
 
 
 ## KEYPOINT CHECKPOINT ##
@@ -317,7 +317,7 @@ for image_name in tq.tqdm(input_files):
         if len(line) == 0 :
             continue
         legend_bbox = legend_bboxes[line_idx_]
-        draw.text((line[-1][0], line[-1][1]), str(len(line)),  fill = (255, 0, 0)) # font = fnt,
+        draw.text((line[-1][0], line[-1][1]), str(len(line)), fill = (255, 0, 0))  # font = fnt,
         xy_list = [(line[-1][0], line[-1][1]), (legend_bbox[0], legend_bbox[1])]
         draw.line(xy_list, fill=(255, 0, 0), width=1)
     save_path = args.output_path + 'mapped_'+ image_name

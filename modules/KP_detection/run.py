@@ -79,8 +79,8 @@ parser.add_argument('--show_LineEX_D',default = True)
 parser.add_argument('--LineEX_D_Path',default="ckpts/ckpt_L.t7")
 parser.add_argument('--show_LineEX_DA',default = True)
 parser.add_argument('--LineEX_DA_Path',default="ckpts/ckpt_L+D.t7")
-parser.add_argument('--use_gpu',default=False)
-parser.add_argument('--cuda_id',default=3)
+parser.add_argument('--use_gpu',default=True)
+parser.add_argument('--cuda_id',default=0)
 
 
 
@@ -96,7 +96,7 @@ else:
 
 if(args.show_LineEX_D):
     LineEX_D  = Model(args)
-    # LineEX_D = LineEX_D.to(CUDA_)
+    LineEX_D = LineEX_D.to(CUDA_)
     state = torch.load(args.LineEX_D_Path, map_location = 'cpu')
     LineEX_D.load_state_dict(state['state_dict'])
     LineEX_D = LineEX_D.to(CUDA_)

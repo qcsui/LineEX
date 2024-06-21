@@ -1,12 +1,12 @@
 echo "Downloading weights"
-gdown 176BjH_6W-HRoU9RvsysSNW27GVIHPlHV
+# gdown 176BjH_6W-HRoU9RvsysSNW27GVIHPlHV
 mkdir temp/
 mkdir data/
 mkdir modules/CE_detection/ckpts
 mkdir modules/KP_detection/ckpts
 mkdir modules/Grouping_legend_mapping/ckpts
 echo "Extracting checkpoints"
-unzip -d temp/ weights.zip
+unzip -d temp/weights weights.zip
 mv temp/weights/checkpoint110.pth modules/CE_detection/ckpts/checkpoint110.pth
 mv temp/weights/ckpt_30.t7 modules/Grouping_legend_mapping/ckpts/ckpt_30.t7
 mv temp/weights/mlp_ckpt.t7 modules/Grouping_legend_mapping/ckpts/mlp_ckpt.t7
