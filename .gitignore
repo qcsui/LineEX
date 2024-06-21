@@ -44,3 +44,6 @@ util/__pycache__/sb_transforms.cpython-38.pyc
 modules/CE_detection/ckpts/*.pth
 modules/CE_detection/ckpts/*.t7
 
+sample_output/*.png
+sample_output/*.json
+sample_input/*.png

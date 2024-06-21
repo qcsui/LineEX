@@ -58,7 +58,7 @@ tensorboard-data-server
 tensorboard-plugin-wit
 threadpoolctl
 tifffile
-timm
+timm==0.5.4
 torch
 torch-tb-profiler
 torchmetrics
